@@ -23,3 +23,10 @@ functions:
           event: s3:ObjectCreated:*
           rules:
             - suffix: .png
+
+resources:
+  Resources:
+    UploadBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:custom.bucket}
